@@ -23,8 +23,10 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
+    "start":
+      "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
     "stop": "egg-scripts stop --title=egg-server-tmpl_egg_react_redux",
+    "clint": "cd web && npm i && houyi pack",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
