@@ -23,11 +23,13 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start":
-      "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
+    "start": "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
     "stop": "egg-scripts stop --title=egg-server-tmpl_egg_react_redux",
-    "clint": "cd web && npm i && houyi pack",
-    "dev": "egg-bin dev",
+    "dev-clint": "cd web && houyi server",
+    "prod-clint": "cd web && houyi pack -p",
+    "server": "egg-bin dev --inspect --port=8080 --sticky",
+    "dev": "npm run clint & npm run server",
+    "prod": "npm run prod-clint & npm run server",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

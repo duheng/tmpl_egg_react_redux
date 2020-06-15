@@ -26,9 +26,9 @@ const routes = () => (
 )
 
 const renderDom = () => {
-  
+
     return <Provider store={store}>{routes()}</Provider>
-  
+
 }
 
 ReactDom.render(

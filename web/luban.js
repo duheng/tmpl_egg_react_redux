@@ -7,8 +7,8 @@ module.exports = {
   "build": "dist",
   "dll": "dll",
   "static": {
-    "development": "",
-    "production": "//api.luban.com/"
+    "development": "//127.0.0.1:9000/",
+    "production": "//127.0.0.1:9000/"
   },
   "api": {
     "development": "",
@@ -16,7 +16,7 @@ module.exports = {
   },
   "entry": {'main':'./src/pages/index.js'},
   "library": {
-     "vendor": ['react', 'react-dom'] 
+     "vendor": ['react', 'react-dom']
   },
   "alias": {},
   "devtool": "source-map",
