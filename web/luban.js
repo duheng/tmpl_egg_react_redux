@@ -4,11 +4,11 @@ module.exports = {
   "platform": "react",
   "ui_plug":"antd",
   "base": "src",
-  "build": "dist",
+  "build": "../static",
   "dll": "dll",
   "static": {
-    "development": "//127.0.0.1:9000/",
-    "production": "//127.0.0.1:9000/"
+    "development": "",
+    "production": ""
   },
   "api": {
     "development": "",

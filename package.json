@@ -7,12 +7,14 @@
     "declarations": true
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
+    "cross-env": "^7.0.2",
     "egg-bin": "^4.11.0",
     "egg-ci": "^1.11.0",
     "egg-mock": "^3.21.0",
@@ -28,8 +30,8 @@
     "dev-clint": "cd web && houyi server",
     "prod-clint": "cd web && houyi pack -p",
     "server": "egg-bin dev --inspect --port=8080 --sticky",
-    "dev": "npm run dev-clint & npm run server",
-    "prod": "npm run prod-clint && npm run server",
+    "dev": "npm run dev-clint && cross-env NODE_ENV=development npm run server",
+    "prod": "npm run prod-clint && cross-env NODE_ENV=production npm run server",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
