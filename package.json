@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0"
   },
@@ -28,8 +29,8 @@
     "dev-clint": "cd web && houyi server",
     "prod-clint": "cd web && houyi pack -p",
     "server": "egg-bin dev --inspect --port=8080 --sticky",
-    "dev": "npm run clint & npm run server",
-    "prod": "npm run prod-clint & npm run server",
+    "dev": "npm run dev-clint & npm run server",
+    "prod": "npm run prod-clint && npm run server",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
