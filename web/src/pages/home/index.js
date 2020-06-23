@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import connect from 'app/store/connect';
 import style from './style';
+import connect from 'app/store/connect';
 import HomeSelector from 'app/selectors/home';
 import * as HomeActions from 'app/actions/home';
 import hocb from './hocb'; //高阶函数的两种封装方式

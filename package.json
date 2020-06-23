@@ -9,7 +9,20 @@
   "dependencies": {
     "axios": "^0.19.2",
     "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.4.0-beta.6",
+    "react-router-dom": "^4.4.0-beta.6",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reqwest": "^2.0.5",
+    "reselect": "^4.0.0",
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -25,8 +38,7 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start":
-      "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
+    "start": "egg-scripts start --daemon --title=egg-server-tmpl_egg_react_redux",
     "stop": "egg-scripts stop --title=egg-server-tmpl_egg_react_redux",
     "dev-clint": "cd web && houyi server",
     "prod-clint": "cd web && houyi pack -p",

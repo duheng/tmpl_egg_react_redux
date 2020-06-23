@@ -1,15 +1,12 @@
 import ReactDom from "react-dom"
 import { BrowserRouter } from "react-router-dom"
-import App from "../route"
+import { Provider } from "react-redux"
 
-// import {Provider} from "react-redux"
+import { createBrowserHistory } from "history" // URL模式的history
+import configureStore from "app/store/configureStore"
+const store = configureStore(createBrowserHistory)
 
-// import { createBrowserHistory } from "history" // URL模式的history
-
-// import configureStore from "app/store/configureStore"
-
-
-// const store = configureStore(createBrowserHistory)
+import App from "./route"
 
 // import asyncComponent from "utils/asyncComponent"
 // const Home = asyncComponent(() => import("./home"))
@@ -21,13 +18,9 @@ const routes = () => (
     </BrowserRouter>
 )
 
-// const renderDom = () => {
-
-//     return <Provider store={store}>{routes()}</Provider>
-
-// }
+const renderDom = () => <Provider store={store}>{routes()}</Provider>
 
 ReactDom.render(
-    routes(),
+    renderDom(),
     document.getElementById("app")
 )

@@ -3,10 +3,10 @@ module.exports = {
   "port": "3001",
   "platform": "react",
   "ui_plug":"antd",
-  "base": "src",
-  "build": "../static",
+  "base": "web/src",
+  "build": "./static",
   "dll": "dll",
-  "server": "server", 
+  "server": "web/server", 
   "static": {
     "development": "",
     "production": ""
@@ -15,7 +15,7 @@ module.exports = {
     "development": "",
     "production": "//api.luban.com/"
   },
-  "entry": {'main':'./src/app.js'},
+  "entry": {'main':'./web/src/app.js'},
   "library": {
      "vendor": ['react', 'react-dom']
   },
