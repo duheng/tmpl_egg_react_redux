@@ -1,15 +1,13 @@
-
+import React, { Fragment } from 'react';
 import { Route, Switch, Redirect} from "react-router-dom"
 import routeConfig from './route.config'
 
-const App = () => {
-  return (
+export default  () => {
+    return (
       <Switch>
         {
-          routeConfig.map(item => <Route key={item.path} {...item} />)
+          routeConfig.map( (item,index) => <Route key={index} path={item.path} exact={item.exact}  render={() => <item.component {...item} />} />)
         }
       </Switch>
-  )
+    )
 }
-
-export default App;

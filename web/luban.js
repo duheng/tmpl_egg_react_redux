@@ -15,7 +15,7 @@ module.exports = {
     "development": "",
     "production": "//api.luban.com/"
   },
-  "entry": {'main':'./src/app.js'},
+  "entry": {'main':'./src/client.js'},
   "library": {
      "vendor": ['react', 'react-dom']
   },

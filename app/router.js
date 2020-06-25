@@ -5,6 +5,6 @@
  */
 module.exports = app => {
   const { router, controller  } = app;
- // const { ssr } = middleware
-  router.get('/(.*?)', controller.ssr.index);
+  //const { ssr } = middleware
+  //router.get('/(.*?)', controller.ssr.index);
 };

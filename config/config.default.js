@@ -21,8 +21,11 @@ module.exports = appInfo => {
   }
 
   // add your middleware config here
-  config.middleware = [];
-
+  config.middleware = ['ssr'];
+  config.ssr = {
+    enable: true, // 是否开启该中间件，不写默认开启
+    match: ['/(.*?)']
+  }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

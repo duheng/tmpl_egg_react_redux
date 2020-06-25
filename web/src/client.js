@@ -1,6 +1,6 @@
 import ReactDom from "react-dom"
 import { BrowserRouter } from "react-router-dom"
-import App from "../route"
+import App from "./route"
 
 // import {Provider} from "react-redux"
 
