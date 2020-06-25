@@ -2,14 +2,13 @@ import { createSelector, } from 'reselect';
 
 
 const getHome = state => {
-  const { movies, } = { ...state.home, };
+  const { show_list, } = { ...state.home, };
   return {
-    movies
+    show_list
   };
 };
 
 export default createSelector(getHome, (home) => {
-  console.log('redu-js--', getHome);
   return {
     home,
   };

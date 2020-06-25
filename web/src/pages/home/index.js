@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 //import style from './style';
-//import connect from 'app/store/connect';
-//import HomeSelector from 'app/selectors/home';
-//import * as HomeActions from 'app/actions/home';
+import connect from '../../app/store/connect';
+import HomeSelector from '../../app/selectors/home';
+import * as HomeActions from '../../app/actions/home';
 //import hocb from './hocb'; //高阶函数的两种封装方式
-// @connect(HomeSelector, HomeActions)
 // @hocb('AAAA')
+@connect(HomeSelector, HomeActions)
 export default class Home extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
       success: false
     };
+  }
+  static fetch() {
+    console.log('fetch--home->')
+   // return store.dispatch(fetchBookList({page:1,size:20}))
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {

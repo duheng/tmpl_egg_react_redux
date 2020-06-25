@@ -27,7 +27,7 @@ const routes = () => (
 
 // }
 
-ReactDom.render(
+ReactDom.hydrate(
     routes(),
     document.getElementById("app")
 )
