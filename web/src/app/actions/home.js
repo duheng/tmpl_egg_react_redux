@@ -1,14 +1,13 @@
 import axios from 'axios'
-import * as urls from '../constants/urls'
+import urls from '../constants/urls'
 import * as types from '../constants/ActionTypes'
 
 const fetchHomeList = (params) =>  {
     return (dispatch, getState) => {
-        console.log('urls----', homeList)
-        return axios.get(homeList, {
+        return axios.get(urls.homeList, {
             params: params
         }).then((res) => {
-            const { success, msg , data } = res
+            const { success, msg , data } = res.data
             if(success) {
                 dispatch({
                     type: types.RECEIVE_SHOWLIST,
@@ -23,6 +22,6 @@ const fetchHomeList = (params) =>  {
     }
 }
 
-export default {
+export {
     fetchHomeList
 }

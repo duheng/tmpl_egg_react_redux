@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 //import style from './style';
 import connect from '../../app/store/connect';
 import HomeSelector from '../../app/selectors/home';
-import * as HomeActions from '../../app/actions/home';
+import { fetchHomeList } from '../../app/actions/home';
 //import hocb from './hocb'; //高阶函数的两种封装方式
 // @hocb('AAAA')
-@connect(HomeSelector, HomeActions)
+@connect(HomeSelector, { fetchHomeList })
 export default class Home extends Component {
   constructor(...args) {
     super(...args);
@@ -14,9 +14,18 @@ export default class Home extends Component {
       success: false
     };
   }
-  static fetch() {
-    console.log('fetch--home->')
-   // return store.dispatch(fetchBookList({page:1,size:20}))
+
+  static fetch(store) {
+    const PARAM = {
+      uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
+      clientType: 1,
+      os: 1,
+      sellChannel: 13,
+      cityId: 1,
+      lng: 0,
+      lat: 0
+    }
+    return store.dispatch(fetchHomeList(PARAM))
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -44,7 +53,7 @@ export default class Home extends Component {
   //   console.log(this.props);
   }
   render() {
-   //console.log('home-render---', this.props.home.movies);
+   console.log('home-render---', this.props.home);
     return (
       <div >
         <Link to="/about">

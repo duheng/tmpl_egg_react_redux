@@ -24,20 +24,20 @@ const CWD = process.cwd()
   
 export default () => {
     return async (req, res, next) => { // 路由中间件
-        const __req = req.req || req
-        const __res = req.req ? req : res
+        const __req  = req.req || req
+        const __res  = req.req ? req : res
         const __next = req.req ? res : next
         //查找组件
         const branch = matchRoutes(routeConfig, __req.url)[0]
         //得到组件
         const Component = branch.route.component
-
-        Component.fetch instanceof Function && Component.fetch(store) 
-
-        console.log("branch---->", branch)
+        //请求对应组件的数据
+        if(Component.fetch instanceof Function) {
+           await Component.fetch(store)
+        }
         console.log("store---->", store)
 
-        const reactStr = renderToString (
+        const reactStr = renderToString(
             <Provider store={store}>
                 <App  location={__req.url}/>
             </Provider>
