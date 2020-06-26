@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import style from './style';
+import styles from './style';
 import connect from '../../app/store/connect';
 import HomeSelector from '../../app/selectors/home';
 import { fetchHomeList } from '../../app/actions/home';
+import ShowList from './ShowList';
 //import hocb from './hocb'; //高阶函数的两种封装方式
 // @hocb('AAAA')
 @connect(HomeSelector, { fetchHomeList })
@@ -15,7 +16,7 @@ export default class Home extends Component {
     };
   }
 
-  static fetch(store) {
+   static async fetch() {
     const PARAM = {
       uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
       clientType: 1,
@@ -25,7 +26,7 @@ export default class Home extends Component {
       lng: 0,
       lat: 0
     }
-    return store.dispatch(fetchHomeList(PARAM))
+    return await fetchHomeList(PARAM)
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -54,11 +55,13 @@ export default class Home extends Component {
   }
   render() {
    console.log('home-render---', this.props.home);
+
     return (
-      <div >
+      <div className='Home'>
         <Link to="/about">
           点击进下一页....
         </Link>
+        <ShowList/>
       </div>
     );
   }

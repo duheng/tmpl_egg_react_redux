@@ -33,7 +33,10 @@ export default () => {
         const Component = branch.route.component
         //请求对应组件的数据
         if(Component.fetch instanceof Function) {
-           await Component.fetch(store)
+            console.log('fetch-type--', Component.fetch())
+           const data = await Component.fetch()
+           store.dispatch(data)
+
         }
         console.log("store---->", store)
 
