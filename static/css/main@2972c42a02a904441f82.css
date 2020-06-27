@@ -1,0 +1,85 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: "border-box";
+  padding: 0;
+  margin: 0;
+  font-size: "16px";
+  background-color: "#FFFFFF";
+}
+
+.Home {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+}
+.Home .title {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: left;
+  margin: 0 0 10px 5%;
+}
+.ShowList .ShowListMain {
+  display: flex;
+}
+.ShowList .ShowListMain .ShowItem {
+  width: 45%;
+  border: 0.03125rem solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  padding: 0 0 10px 0;
+}
+.ShowList .ShowListMain .ShowItem img {
+  width: 100%;
+  border: 0.03125rem solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+.ShowList .ShowListMain .ShowItem .title {
+  max-height: 3rem;
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
+  font-weight: 700;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0.375rem 0 0 0.25rem;
+}
+.ShowList .ShowListMain .ShowItem .time {
+  margin: 0.25rem 0 0 0.25rem;
+  font-size: 0.75rem;
+  color: #999;
+  line-height: 1.0625rem;
+}
+.ShowList .ShowListMain .ShowItem .price {
+  display: flex;
+  height: 1.1875rem;
+  margin: 0.4375rem 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f03d37;
+  line-height: 1.1875rem;
+  font-family: DINAlternate-Bold, Roboto-Medium;
+}
+.ShowList .ShowListMain .ShowItem .price .label {
+  height: 1.1875rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #f03d37;
+  line-height: 1.3125rem;
+  padding-left: 0.1875rem;
+}
+.ShowList .ShowListMain .ShowListLeft {
+  margin: 0 2% 10px 3%;
+}
+.ShowList .ShowListMain .ShowListRight {
+  margin: 0 3.5% 10px 1.5%;
+}
+
+/*# sourceMappingURL=main@2972c42a02a904441f82.css.map*/

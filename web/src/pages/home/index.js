@@ -54,14 +54,19 @@ export default class Home extends Component {
   //   console.log(this.props);
   }
   render() {
-   console.log('home-render---', this.props.home);
-
+  
+    const { show_list } = this.props.home
+    console.log('home-render---', this.props.home);
     return (
       <div className='Home'>
         <Link to="/about">
           点击进下一页....
         </Link>
-        <ShowList/>
+        <div  className='title'>演出列表</div>
+        {
+          show_list.length > 0 &&
+          <ShowList data={show_list}/>
+        }
       </div>
     );
   }

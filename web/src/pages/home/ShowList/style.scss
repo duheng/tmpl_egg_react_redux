@@ -1,0 +1,60 @@
+.ShowList {
+ .ShowListMain {
+     display: flex;
+     .ShowItem {
+       width:45% ;
+       border: .03125rem solid rgba(0,0,0,.15);
+       border-radius: .375rem;
+       background-color: #ffffff;
+       padding: 0 0 10px 0;
+       img {
+           width: 100%;
+           border: .03125rem solid rgba(0,0,0,.15);
+           border-radius:.375rem .375rem 0 0;
+       }
+       .title {
+        max-height: 3rem;
+        font-size: .8125rem;
+        line-height: 1.1875rem;
+        font-weight: 700;
+        color: #333;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: .375rem 0 0 .25rem;
+       }
+       .time {
+        margin: .25rem 0 0 .25rem;
+        font-size: .75rem;
+        color: #999;
+        line-height: 1.0625rem;
+       }
+       .price {
+        display: flex;
+        height: 1.1875rem;
+        margin: .4375rem 0 0 .25rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #f03d37;
+        line-height: 1.1875rem;
+        font-family: DINAlternate-Bold,Roboto-Medium;
+        .label {
+            height: 1.1875rem;
+            font-size: .75rem;
+            font-weight: 400;
+            color: #f03d37;
+            line-height: 1.3125rem;
+            padding-left: .1875rem;
+        }
+       }
+     }
+     .ShowListLeft {
+            margin: 0 2% 10px 3%;
+     }
+     .ShowListRight {
+        margin: 0 3.5% 10px 1.5%;
+     }
+ }  
+}
