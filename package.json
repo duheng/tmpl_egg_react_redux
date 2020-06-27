@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0",
+    "history": "^5.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",

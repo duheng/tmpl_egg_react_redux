@@ -3,8 +3,8 @@ import urls from '../constants/urls'
 import * as types from '../constants/ActionTypes'
 
 const fetchHomeList = (params) =>  {
-    return (dispatch, getState) => {
-        return axios.get(urls.homeList, {
+    return async (dispatch, getState) => {
+        return await axios.get(urls.homeList, {
             params: params
         }).then((res) => {
             const { success, msg , data } = res.data

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 import styles from './style';
 import connect from '../../app/store/connect';
 import HomeSelector from '../../app/selectors/home';
@@ -16,7 +16,7 @@ export default class Home extends Component {
     };
   }
 
-   static async fetch() {
+   static fetch(store) {
     const PARAM = {
       uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
       clientType: 1,
@@ -26,7 +26,7 @@ export default class Home extends Component {
       lng: 0,
       lat: 0
     }
-    return await fetchHomeList(PARAM)
+    return store.dispatch(fetchHomeList(PARAM))
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -54,9 +54,7 @@ export default class Home extends Component {
   //   console.log(this.props);
   }
   render() {
-  
     const { show_list } = this.props.home
-    console.log('home-render---', this.props.home);
     return (
       <div className='Home'>
         <Link to="/about">

@@ -13,7 +13,6 @@ export default class ShowList extends PureComponent {
   render() {
     const { data } = this.props
   //   console.log('home-render---', this.props.home);
-  console.log('data---', data);
     return (
       <div className='ShowList'>
         <div className='ShowListMain'>
