@@ -1,5 +1,7 @@
 import ReactDom from "react-dom"
-import { BrowserRouter } from "react-router-dom"
+//import { BrowserRouter } from "react-router-dom"
+
+  import {  BrowserRouter as Router,Route, Switch, Redirect} from "react-router-dom"
 import App from "./route"
 
 import {Provider} from "react-redux"
@@ -13,10 +15,11 @@ import configureStore from "app/store/configureStore"
 // import asyncComponent from "utils/asyncComponent"
 // const Home = asyncComponent(() => import("./home"))
 // const About = asyncComponent(() => import("./about"))
+const url = store.getState().url;
 const routes = () => (
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
+    <Router location={ url }>
+          <App/>
+    </Router>
 )
 const renderDom = () => {
     return <Provider store={store}>{routes()}</Provider>

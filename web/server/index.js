@@ -15,6 +15,9 @@ export default () => {
         const __req  = req.req || req
         const __res  = req.req ? req : res
         const __next = req.req ? res : next
+        if (__req.url.indexOf('.') > -1) {
+      return;
+    };
         //creat Store
         const history = createMemoryHistory({ initialEntries: [__req.url] });
         let store = configureStore(history)
@@ -28,7 +31,7 @@ export default () => {
         }
         const reactStr = renderToString(
             <Provider store={store}>
-                <App  location={__req.url}/>
+                <App  location={__req.url}  context={{}}/>
             </Provider>
         )
         const initState = store.getState()

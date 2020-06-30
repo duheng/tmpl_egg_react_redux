@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link,withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './style';
 import connect from '../../app/store/connect';
 import HomeSelector from '../../app/selectors/home';

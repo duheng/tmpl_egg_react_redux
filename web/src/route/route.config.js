@@ -1,6 +1,7 @@
 import { Home, About } from '../pages';
 
-export default [{
+export default [
+{
   component: Home,
   path: '/',
   exact: true,

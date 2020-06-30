@@ -12,9 +12,9 @@ class SsrController extends Controller {
   async index() {
     const { ctx } = this;
     const { path, url } = ctx
-    if (url.indexOf('.') > -1) {
-      return;
-    };
+    // if (url.indexOf('.') > -1) {
+    //   return;
+    // };
   //     const reactStr = renderToString(App)
      //  console.log('reactDom----', reactStr)
   // const htmlStr = renderToString(reactDom)

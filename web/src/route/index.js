@@ -6,7 +6,7 @@ export default  () => {
     return (
       <Switch>
         {
-          routeConfig.map( (item,index) => <Route key={index} path={item.path} exact={item.exact}  render={() => <item.component {...item} />} />)
+          routeConfig.map( (item,index) => <Route key={`${item.path}-${item.name}`}  {...item}  />)
         }
       </Switch>
     )
