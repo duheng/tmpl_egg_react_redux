@@ -27,8 +27,7 @@
 	    <title>{%=o.options.title %}</title>
     </head>
     <body>
-	    <div id="app">{app}</div>
-		<script>window.__INITIAL_STATE__ ={initState}</script>
+	    <div id="app"></div>
 		{% for (var chunk in o.files.js) { %}
 				<script type="text/javascript" src="{%=o.files.js[chunk]%}"></script>
 		{% } %}	

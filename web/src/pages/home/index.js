@@ -43,6 +43,18 @@ export default class Home extends Component {
   //  // 可以在此处移除订阅，定时器等等
   // }
   componentDidMount() {
+    if(!window.__INITIAL_STATE__) {
+      const PARAM = {
+        uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
+        clientType: 1,
+        os: 1,
+        sellChannel: 13,
+        cityId: 1,
+        lng: 0,
+        lat: 0
+      }
+      this.props.actions.fetchHomeList(PARAM)
+    }
   //   console.log('hoc---1');
   //   const { actions } = this.props;
   //  // actions.fetchMovies();

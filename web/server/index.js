@@ -36,9 +36,13 @@ export default () => {
         )
         const initState = store.getState()
         const file = fs.readFileSync(path.resolve(CWD,'./static/main.html'), 'utf8')
-        const serverHtml = file.replace('{app}', reactStr).replace('{initState}',JSON.stringify(initState) ); //然后将index.html里面的特殊字段用react渲染好的dom字符串替换
+        const serverHtml = file.replace('<div id="app"></div>', `<div id="app">${reactStr}</div>`)
+        .replace(
+            '<body>',
+            `<body><script>window.__INITIAL_STATE__ = ${JSON.stringify(initState)}</script>`
+        );
         __res.type = 'html';
-        __res.body = serverHtml
+        __res.body = serverHtml;
         await __next()
         
       

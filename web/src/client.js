@@ -8,7 +8,7 @@ import {Provider} from "react-redux"
 import { createBrowserHistory } from "history" // URL模式的history
 
 import configureStore from "app/store/configureStore"
-
+import registerServiceWorker from './registerServiceWorker';
 
  const store = configureStore(createBrowserHistory,window.__INITIAL_STATE__)
 
@@ -29,3 +29,5 @@ ReactDom.hydrate(
     renderDom(),
     document.getElementById("app")
 )
+
+registerServiceWorker()
