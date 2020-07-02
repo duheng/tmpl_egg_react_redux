@@ -27,6 +27,7 @@ export default () => {
         const Component = branch.route.component
         //请求对应组件的数据
         if(Component.fetch instanceof Function) {
+            console.log('F----', Component.fetch)
            const data = await Component.fetch(store)
         }
         const reactStr = renderToString(
