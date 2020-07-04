@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import styles from './style';
 import connect from '../../app/store/connect';
 import HomeSelector from '../../app/selectors/home';
-import { fetchHomeList } from '../../app/actions/home';
+import { fetchHomeList , fetchHomeListLocal } from '../../app/actions/home';
 import ShowList from './ShowList';
 //import hocb from './hocb'; //高阶函数的两种封装方式
 // @hocb('AAAA')
-@connect(HomeSelector, { fetchHomeList })
+@connect(HomeSelector, { fetchHomeList,fetchHomeListLocal })
 export default class Home extends Component {
   constructor(...args) {
     super(...args);
@@ -16,7 +16,7 @@ export default class Home extends Component {
     };
   }
 
-  static async fetch() {
+  static async fetch(store) {
     const PARAM = {
       uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
       clientType: 1,
@@ -26,9 +26,14 @@ export default class Home extends Component {
       lng: 0,
       lat: 0
     }
+    console.log('st-----',store)
+    console.log('this-----',this)
+    if(store) {
+      return store.dispatch(fetchHomeList(PARAM))
+    } else {
+      this.props.actions.fetchHomeListLocal(PARAM)
+    }
 
-    console.log('fetchHomeList----', fetchHomeList)
-    return await fetchHomeList(PARAM)
   }
 
   // static getDerivedStateFromProps(nextProps, prevState) {
@@ -45,6 +50,7 @@ export default class Home extends Component {
   //  // 可以在此处移除订阅，定时器等等
   // }
   componentDidMount() {
+    Home.fetch.call(this)
    // if(!window.__INITIAL_STATE__) {
       // const PARAM = {
       //   uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
