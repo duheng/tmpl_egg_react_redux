@@ -27,7 +27,6 @@ export default class Home extends Component {
       lat: 0
     }
     console.log('st-----',store)
-    console.log('this-----',this)
     if(store) {
       return store.dispatch(fetchHomeList(PARAM))
     } else {
@@ -50,7 +49,10 @@ export default class Home extends Component {
   //  // 可以在此处移除订阅，定时器等等
   // }
   componentDidMount() {
+
+    console.log('stticstyle------',this.props.staticContext)
     Home.fetch.call(this)
+    
    // if(!window.__INITIAL_STATE__) {
       // const PARAM = {
       //   uuid: 'hxcbrnekaefupn48wy6en4nh5vbills74h3w9nx20kk6w6c7fiua5z53om1xiv3q',
